@@ -1,0 +1,22 @@
+@import './styles/variables';
+
+.app {
+    background-color: $backgroundColor;
+}
+
+.main {
+    height: 100vh;
+    background-color: pink;
+    overflow: hidden;
+
+    &__rectangle-skew {
+        height: 550px;
+        background: purple;
+        width: 2000px;
+        // transform: rotate(-12deg) scale(1);
+        position: absolute;
+        left: -87px;
+        top: 0;
+        transform-origin: 11px;
+    }
+}
