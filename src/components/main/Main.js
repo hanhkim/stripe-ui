@@ -1,33 +1,32 @@
 import React from 'react';
 import './Main.scss';
 import CanvasGradient from '../canvas-gradient/CanvasGradient';
+import { ReactComponent as PhoneSvg } from '../../assets/phone.svg';
 
 const Main = () => {
   return (
-    <section class='section_top'>
-      <div class='section-container'>
-        <div class='section-layout-container container-medium with-padding'>
-          <div class='section-layout'>
-            <div class='gradient-area'>
-              <div class='gradient-title-area'>
-                <h1 class='text text-above section-title-1'>
-                  Payments infrastructure for the internet
-                </h1>
-                <div class='section_background-wrap'>
-                  <CanvasGradient />
-                </div>
-                <div class='text text-under text-under-blended section-title-1'>
-                  Payments infrastructure for the internet
-                </div>
-                <div class='text text-under text-under-overlay section-title-1'>
+    <section className='section_top'>
+      <div className='section_background-wrap'>
+        <CanvasGradient />
+      </div>
+      <div className='section-container'>
+        <div className='section-layout-container'>
+          <div className='section-layout'>
+            <div className='gradient-area'>
+              <div className='gradient-title-area'>
+                <div className='text text-under text-under-blended section-title-1'>
                   Payments infrastructure for the internet
                 </div>
               </div>
             </div>
-            <h2 class='section-title-2 subtitle'>
-              Learn how to create the tilted gradient effect on Stripe's new
-              website.
+            <h2 className='section-title-2 subtitle'>
+              Millions of companies of all sizes—from startups to Fortune
+              500s—use Stripe’s software and APIs to accept payments, send
+              payouts, and manage their businesses online.
             </h2>
+          </div>
+          <div className='section-layout__right'>
+            <PhoneSvg />
           </div>
         </div>
       </div>

@@ -6,22 +6,82 @@ $gradient-title-margin: 100px;
 $section-skew-Y: -12deg;
 $section-angle-sin: 0.212;
 $transform-origin-x: calc(50px * 0.8);
+$section-top-height: 500px;
+
+@mixin sectionTopHeight($px) {
+    height: $px
+}
 
 .section_top {
     position: relative;
+	height: $section-top-height;
+	width: 100%;	
+
+	.section-container, .section-layout-container {
+		height: 100%;
+	}
+
+	.section-layout {
+		position: relative;
+	}
+
+	.section_background-wrap {
+		transform: skewY(-12deg);
+		transform-origin: 0px 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+		height: 100%;
+		width: 100vw;
+	}
+
+	.section-layout-container {
+		height: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		width: 98%;
+		margin: 0px auto;
+		align-items: end;
+		padding: 8px;
+
+		@media screen and (min-width: 1024px) {
+			width: 1020px;
+		}
+	}
+
+	.section-title-1 {
+		font-size: 92px;
+		font-weight: 600;
+
+		@media screen and (max-width: 1024px) {
+			font-size: 80px;
+		}
+	}
 }
 
-.section-title-1 {
-    font-size: 94px;
-    width: 700px;
-    font-weight: 600;
+@media screen and (max-width: 768px) {
+	.section_top {
+		@include sectionTopHeight(300px)
+	}
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+	.section_top {
+		@include sectionTopHeight(400px)
+	}
+
+	.section-layout__right {
+		@include sectionTopHeight(500px)
+	}
+
+
 }
 
 .text {
 	line-height: 1;
 	margin: var(--gradient-title-margin) 0 0 0;
 	text-transform: none;
-	letter-spacing: 2px;
+	letter-spacing: -7px;
 	min-height: 200px;
 	display: flex;
 	align-items: flex-end;
@@ -34,9 +94,8 @@ $transform-origin-x: calc(50px * 0.8);
 }
 
 .text-under {
-	position: absolute;
 	bottom: 0px;
-	// left: 0;
+	left: 0;
 	z-index: 2;
 }
 .text-under-blended {
@@ -49,31 +108,13 @@ $transform-origin-x: calc(50px * 0.8);
 	color: #3a3a3a;
 }
 
-.section_background-wrap {
-	transform: skewY(-12deg);
-	position: absolute;
-	top: 0;
-	width: 100%;
-	position: absolute;
-	transform-origin: 0px 100%;
-	height: auto;
-	left: 0;
+.subtitle {
+	font-size: $textFontSize;
+	color: $textColor;
 }
 
-.gradient-title-area {
-	height: 100%;
-    width: 100%;
-}
-.gradient-area {
-	height: 100%;
-}
-
-.section-layout-container {
-	margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 1080px;
-    padding-top: 200px;
+.section-layout__right {
+	max-height: 600px;
+    padding-top: 0px;
+    z-index: 2;
 }
