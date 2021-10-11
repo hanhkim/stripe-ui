@@ -6,7 +6,7 @@ $gradient-title-margin: 100px;
 $section-skew-Y: -12deg;
 $section-angle-sin: 0.212;
 $transform-origin-x: calc(50px * 0.8);
-$section-top-height: 500px;
+$section-top-height: 600px;
 
 @mixin sectionTopHeight($px) {
     height: $px
@@ -71,7 +71,7 @@ $section-top-height: 500px;
 	}
 
 	.section-layout__right {
-		@include sectionTopHeight(500px)
+		@include sectionTopHeight(600px)
 	}
 
 
@@ -115,6 +115,6 @@ $section-top-height: 500px;
 
 .section-layout__right {
 	max-height: 600px;
-    padding-top: 0px;
-    z-index: 2;
+    padding-top: 100px;
+    z-index: 0;
 }

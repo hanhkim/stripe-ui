@@ -1,0 +1,49 @@
+.menu-product {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    background: white;
+    top: 50px;
+    left: calc(50% - 250px);
+    color: black;
+    padding: 16px;
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    transition:all 0.3s ease-in-out 0s, visibility 0s linear 0.2s, opacity 0.3s linear 0.3s;
+    border-radius: 10px;
+
+    .rectangle {
+        position: absolute;
+        top: -10px;
+        width: 20px;
+        height: 20px;
+        background: white;
+        left: calc(50% - 15px);
+        box-sizing: content-box;
+        transform: rotate(45deg) skew(10deg, 10deg);
+        border-radius: 3px;
+        cursor: none;
+        pointer-events: none;
+    }
+}
+
+.dropdown_menu-2 {
+    transform-origin: top center;
+    animation: rotateX 300ms ease-in-out forwards
+}
+
+
+@keyframes rotateX {
+    0% {
+      opacity: 0;
+      transform: rotateX(-90deg);
+    }
+    50% {
+      transform: rotateX(-20deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg);
+    }
+  }
